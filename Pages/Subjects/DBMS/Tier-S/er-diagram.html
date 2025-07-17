@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-R Diagram - DBMS</title>
-    <link rel="stylesheet" href="../../dbms_style.css"> 
+    <link rel="stylesheet" href="/Pages/Subjects/DBMS/dbms_style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header class="page-header">
-        <a href="../../../index.html" class="home-button"><i class="fas fa-home"></i> Home</a>
-        <a href="../dbms_home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to DBMS</a>
+        <div class="nav-buttons">
+            <a href="/index.html" class="home-button"><i class="fas fa-home"></i> Home</a>
+            <a href="/Pages/Subjects/DBMS/dbms_home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to DBMS</a>
+        </div>
+        <h1 class="subject-title">DBMS</h1>
         <div class="theme-switcher">
             <i class="fas fa-sun"></i><label class="switch"><input type="checkbox" id="theme-toggle-checkbox"><span class="slider round"></span></label><i class="fas fa-moon"></i>
         </div>
@@ -19,7 +22,7 @@
     <main class="content-container topic-page">
         <div class="full-topic">
             <h1>E-R Diagram & Relational Model</h1>
-            <p><strong>E-R (Entity-Relationship) Diagram</strong> ek 'Naksha' hai. Yeh database banane se pehle ka blueprint hai, jisse hum system ke data ko design karte hain. Isse humein pata chalta hai ki system mein kaun-kaun si 'cheezein' (Entities) hain, unki kya-kya properties (Attributes) hain, aur wo aapas mein kaise judi hui hain (Relationships).</p>
+            <p><strong>E-R (Entity-Relationship) Diagram</strong> ek 'Naksha' hai. Yeh database banane se pehle ka blueprint hai, jisse hum system ke data ko design karte hain. Isse humein pata chalta hai ki system mein kaun-kaun si 'cheezein' <strong>(Entities)</strong> hain, unki kya-kya properties <strong>(Attributes)</strong> hain, aur wo aapas mein kaise judi hui hain <strong>(Relationships)</strong>.</p>
             
             <h2>A. Core Components of an E-R Diagram</h2>
             <ul>
@@ -38,9 +41,9 @@
             </ul>
 
             <h2>C. Mapping to Relational Model (Tables)</h2>
-            <p>E-R diagram se actual tables banane ke rules. Sabse important rule hai ki <strong>Many-to-Many (M:N)</strong> relationship ke liye hamesha ek naya, alag table banta hai, jisme dono entities ke Primary Keys as Foreign Keys aate hain.</p>
+            <p>E-R diagram se actual tables banane ke rules. Sabse important rule hai ki <strong>Many-to-Many (M:N)</strong> relationship ke liye hamesha ek <strong>naya, alag table</strong> banta hai, jisme dono entities ke Primary Keys as Foreign Keys aate hain.</p>
         </div>
     </main>
-    <script src="../../dbms_script.js"></script>
+    <script src="/Pages/Subjects/DBMS/dbms_script.js"></script>
 </body>
 </html>
