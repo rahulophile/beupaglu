@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Management & ACID - DBMS</title>
+    <link rel="stylesheet" href="../../dbms_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="page-header">
+        <a href="../../../index.html" class="home-button"><i class="fas fa-home"></i> Home</a>
+        <a href="../dbms_home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to DBMS</a>
+        <div class="theme-switcher">
+            <i class="fas fa-sun"></i><label class="switch"><input type="checkbox" id="theme-toggle-checkbox"><span class="slider round"></span></label><i class="fas fa-moon"></i>
+        </div>
+    </header>
+
+    <main class="content-container topic-page">
+        <div class="full-topic">
+            <h1>Transaction Management & ACID Properties</h1>
+            <p><strong>Transaction</strong>, kaam ka ek logical unit hai (e.g., bank se paisa transfer karna). Yeh ya to poora hoga (COMMIT), ya bilkul nahi hoga (ROLLBACK). Transaction Management inhi operations ko safely manage karta hai.</p>
+            
+            <h2>ACID Properties: The 'Vachan' of a Database</h2>
+            <p>Har transaction ko ye 4 vachan (properties) nibhaane padte hain. Ye DBMS ka backbone hain.</p>
+            <ul>
+                <li><strong>A - Atomicity (All or Nothing):</strong> Transaction ek 'atom' ki tarah hai, jise toda nahi ja sakta. Ya to transaction ke saare operations successfully honge, ya ek bhi nahi hoga.</li>
+                <li><strong>C - Consistency (Staying Correct):</strong> Database transaction ke shuru hone se pehle aur khatam hone ke baad, hamesha ek valid (consistent) state me rahega.</li>
+                <li><strong>I - Isolation (You are Alone):</strong> Agar 100 log ek saath database use kar rahe hain, to har transaction ko lagega ki wo akela hai. Ek ka adhoora kaam doosre ko nahi dikhega.</li>
+                <li><strong>D - Durability (Permanence):</strong> Agar ek transaction successfully <code>COMMIT</code> ho gaya, to uska result database me <strong>permanent</strong> ho jaata hai, chahe system crash ho jaye.</li>
+            </ul>
+
+            <h2>Concurrency Control</h2>
+            <p>Isolation property ko aache se implement karne ke liye Concurrency Control techniques use hoti hain. Ye ensure karti hain ki jab multiple transactions ek saath chalein, to koi problem na ho.</p>
+            <ul>
+                <li><strong>Two-Phase Locking (2PL):</strong> Yeh ek popular protocol hai jo serializability ko guarantee karta hai. Iske do phase hote hain: <strong>Growing Phase</strong> (sirf lock acquire karna) aur <strong>Shrinking Phase</strong> (sirf lock release karna).</li>
+                <li><strong>Deadlock:</strong> 2PL se deadlock ho sakta hai, jahan do ya zyada transactions ek doosre ka intezaar karte reh jaate hain.</li>
+            </ul>
+        </div>
+    </main>
+    <script src="../../dbms_script.js"></script>
+</body>
+</html>

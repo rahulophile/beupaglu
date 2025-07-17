@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B+ Trees - DBMS</title>
+    <link rel="stylesheet" href="/Pages/Subjects/DBMS/dbms_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="nav-buttons">
+            <a href="/index.html" class="home-button"><i class="fas fa-home"></i> Home</a>
+            <a href="/Pages/Subjects/DBMS/dbms_home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to DBMS</a>
+        </div>
+        <h1 class="subject-title">DBMS</h1>
+        <div class="theme-switcher">
+            <i class="fas fa-sun"></i><label class="switch"><input type="checkbox" id="theme-toggle-checkbox"><span class="slider round"></span></label><i class="fas fa-moon"></i>
+        </div>
+    </header>
+
+    <main class="content-container topic-page">
+        <div class="full-topic">
+            <h1>B+ Trees</h1>
+            <p>Jab database me laakhon-karodon records ho jaate hain, to unhe dhoondhna (search karna) bahut slow ho jaata hai. <strong>B+ Tree</strong> ek special tree-based data structure hai jo database me <strong>indexing</strong> ke liye use hota hai. Yeh searching, insertion, aur deletion ko bahut fast bana deta hai, khaas kar jab data hard disk par store ho.</p>
+            
+            <h2>Why B+ Trees?</h2>
+            <p>Normal Binary Search Trees (BST) disk-based databases ke liye inefficient hote hain. B+ Tree <strong>'mota' aur 'chota' (fat and short)</strong> hota hai, jiska matlab hai:</p>
+            <ul>
+                <li><strong>Low Height:</strong> Iski height kam hoti hai.</li>
+                <li><strong>High Fanout:</strong> Har node me bahut saari keys aur child pointers hote hain.</li>
+            </ul>
+            <p>In do cheezon ki vajah se, data ko dhoondhne ke liye kam se kam <strong>disk I/O operations</strong> lagte hain, jisse performance dramatically improve hoti hai.</p>
+
+            <h2>Structure of a B+ Tree</h2>
+            <ul>
+                <li><strong>Internal Nodes:</strong> Inka kaam sirf raasta dikhana (navigation) hai. Inme sirf <strong>keys</strong> aur <strong>pointers</strong> (child nodes ke address) hote hain.</li>
+                <li><strong>Leaf Nodes:</strong> Asli data (ya data ke records ka pointer) sirf <strong>leaf nodes</strong> me hota hai. Saare leaf nodes ek hi level par hote hain.</li>
+                <li><strong>Linked Leaves:</strong> Saare leaf nodes aapas me ek doubly linked list ki tarah jude hote hain. Isse <strong>range queries</strong> (e.g., saare employees dhoondho jinki salary <code>50k</code> se <code>80k</code> ke beech hai) bahut fast ho jaati hain.</li>
+            </ul>
+            
+            <h2>Rules for Order 'p'</h2>
+            <ul>
+                <li>Har node me (except root) kam se kam <strong>`ceil(p/2)`</strong> pointers hone chahiye.</li>
+                <li>Har node me zyada se zyada <strong>`p`</strong> pointers ho sakte hain.</li>
+                <li>Har node me (except root) kam se kam <strong>`ceil(p/2) - 1`</strong> keys honi chahiye.</li>
+                <li>Har node me zyada se zyada <strong>`p-1`</strong> keys ho sakti hain.</li>
+            </ul>
+            <p>Exam me numericals aate hain jisme keys dekar B+ Tree construct karna hota hai. Usme <strong>node overflow</strong> (jab node bhar jaaye) hone par <strong>node split</strong> karna sabse important step hai.</p>
+        </div>
+    </main>
+    <script src="/Pages/Subjects/DBMS/dbms_script.js"></script>
+</body>
+</html>

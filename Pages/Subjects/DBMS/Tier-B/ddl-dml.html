@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDL vs DML - DBMS</title>
+    <link rel="stylesheet" href="/Pages/Subjects/DBMS/dbms_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="nav-buttons">
+            <a href="/index.html" class="home-button"><i class="fas fa-home"></i> Home</a>
+            <a href="/Pages/Subjects/DBMS/dbms_home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to DBMS</a>
+        </div>
+        <h1 class="subject-title">DBMS</h1>
+        <div class="theme-switcher">
+            <i class="fas fa-sun"></i><label class="switch"><input type="checkbox" id="theme-toggle-checkbox"><span class="slider round"></span></label><i class="fas fa-moon"></i>
+        </div>
+    </header>
+
+    <main class="content-container topic-page">
+        <div class="full-topic">
+            <h1>DDL vs DML Commands</h1>
+            <p>SQL commands ko unke kaam ke basis par categories me baanta gaya hai. Do sabse important categories hain DDL aur DML.</p>
+            
+            <h2>DDL (Data Definition Language)</h2>
+            <p>Yeh commands database ke <strong>structure (schema)</strong> ko define karne ya badalne ke kaam aati hain. Inke chalte hi changes <strong>auto-commit</strong> (permanently save) ho jaate hain.</p>
+            <ul>
+                <li><strong><code>CREATE</code>:</strong> Naya database, table, ya view banana.</li>
+                <li><strong><code>ALTER</code>:</strong> Maujooda table ke structure ko badalna (e.g., naya column add karna).</li>
+                <li><strong><code>DROP</code>:</strong> Poore table ko uske structure ke saath delete karna.</li>
+                <li><strong><code>TRUNCATE</code>:</strong> Table ke andar ka saara data ek saath delete karna (structure bana rehta hai).</li>
+                <li><strong><code>RENAME</code>:</strong> Ek object ka naam badalna.</li>
+            </ul>
+
+            <h2>DML (Data Manipulation Language)</h2>
+            <p>Yeh commands table ke <strong>andar ke data</strong> par kaam karne (manipulate karne) ke liye hoti hain. Inko <code>COMMIT</code> ya <code>ROLLBACK</code> kiya jaa sakta hai.</p>
+            <ul>
+                <li><strong><code>SELECT</code>:</strong> Data ko retrieve (dekhna).</li>
+                <li><strong><code>INSERT</code>:</strong> Table me nayi rows (records) daalna.</li>
+                <li><strong><code>UPDATE</code>:</strong> Maujooda rows ko modify karna.</li>
+                <li><strong><code>DELETE</code>:</strong> Rows ko delete karna.</li>
+            </ul>
+            
+            <p>Iske alawa <strong>DCL (Data Control Language)</strong> - <code>GRANT</code>, <code>REVOKE</code> aur <strong>TCL (Transaction Control Language)</strong> - <code>COMMIT</code>, <code>ROLLBACK</code>, <code>SAVEPOINT</code> bhi hote hain.</p>
+        </div>
+    </main>
+    <script src="/Pages/Subjects/DBMS/dbms_script.js"></script>
+</body>
+</html>

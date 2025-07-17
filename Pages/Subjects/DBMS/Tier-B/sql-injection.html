@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection - DBMS</title>
+    <link rel="stylesheet" href="/Pages/Subjects/DBMS/dbms_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="nav-buttons">
+            <a href="/index.html" class="home-button"><i class="fas fa-home"></i> Home</a>
+            <a href="/Pages/Subjects/DBMS/dbms_home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to DBMS</a>
+        </div>
+        <h1 class="subject-title">DBMS</h1>
+        <div class="theme-switcher">
+            <i class="fas fa-sun"></i><label class="switch"><input type="checkbox" id="theme-toggle-checkbox"><span class="slider round"></span></label><i class="fas fa-moon"></i>
+        </div>
+    </header>
+
+    <main class="content-container topic-page">
+        <div class="full-topic">
+            <h1>SQL Injection</h1>
+            <p>SQL Injection (SQLi) ek bahut hi common aur khatarnak <strong>web security vulnerability</strong> hai. Isme attacker web application ke input fields (jaise login form, search bar) me malicious SQL code "inject" kar deta hai.</p>
+            <p>Agar application aache se secure nahi hai, to database uss malicious code ko ek valid query ki tarah chala deta hai, jisse attacker database ka poora control le sakta hai.</p>
+            
+            <h2>Example: Login Bypass</h2>
+            <p>Maan lo ek website ka login query aise likha hai: <code>"SELECT * FROM users WHERE username = '" + user_input + "';"</code></p>
+            <p>Attacker username field me yeh daalega: <code>' OR '1'='1</code></p>
+            <p>Final query ban jayegi: <code>SELECT * FROM users WHERE username = '' OR '1'='1';</code></p>
+            <p>Kyunki <code>'1'='1'</code> hamesha <strong>TRUE</strong> hota hai, isliye <code>WHERE</code> clause hamesha true ho jayega aur attacker bina password ke login kar jayega.</p>
+            
+            <h2>Prevention (Kaise Rokein)</h2>
+            <ul>
+                <li><strong>Prepared Statements (Parameterized Queries):</strong> Yeh <strong>sabse best</strong> tareeka hai. Isme query ka template aur user input alag-alag bheje jaate hain, isliye database input ko code nahi samajhta.</li>
+                <li><strong>Input Validation:</strong> User se aa rahe har input ko aache se check karna ki usme koi special characters (<code>'</code>, <code>;</code>, <code>--</code>) to nahi hain.</li>
+                <li><strong>Using ORMs:</strong> Object-Relational Mapping libraries (jaise Hibernate, Django ORM) by default SQL injection se bachate hain.</li>
+            </ul>
+        </div>
+    </main>
+    <script src="/Pages/Subjects/DBMS/dbms_script.js"></script>
+</body>
+</html>

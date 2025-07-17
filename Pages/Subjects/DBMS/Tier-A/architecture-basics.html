@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS Architecture & Basics - DBMS</title>
+    <link rel="stylesheet" href="/Pages/Subjects/DBMS/dbms_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="nav-buttons">
+            <a href="/index.html" class="home-button"><i class="fas fa-home"></i> Home</a>
+            <a href="/Pages/Subjects/DBMS/dbms_home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to DBMS</a>
+        </div>
+        <h1 class="subject-title">DBMS</h1>
+        <div class="theme-switcher">
+            <i class="fas fa-sun"></i><label class="switch"><input type="checkbox" id="theme-toggle-checkbox"><span class="slider round"></span></label><i class="fas fa-moon"></i>
+        </div>
+    </header>
+
+    <main class="content-container topic-page">
+        <div class="full-topic">
+            <h1>DBMS Architecture & Basics</h1>
+            <p>Yeh topic DBMS ka foundation hai. Yeh batata hai ki DBMS parde ke peeche kaam kaise karta hai aur iski zaroorat hi kyun padi.</p>
+            
+            <h2>Three-Level Architecture (ANSI-SPARC)</h2>
+            <p>Iska main maksad hai <strong>Data Independence</strong> achieve karna. Iske 3 levels hote hain:</p>
+            <ul>
+                <li><strong>Physical/Internal Level:</strong> Sabse low-level. Yeh batata hai ki data <strong>actually</strong> hard disk par kaise store ho raha hai (e.g., files, B-Trees).</li>
+                <li><strong>Logical/Conceptual Level:</strong> "Beech" ka level. Yeh poore database ka structure define karta hai - kaun se tables honge, unme kya columns honge, aur unke beech me kya relationships honge.</li>
+                <li><strong>View/External Level:</strong> Sabse high-level, jo end-user ko dikhta hai. Har user ko database ka sirf utna hi hissa (view) dikhaya jaata hai jitna uske kaam ka hai.</li>
+            </ul>
+
+            <h2>DBMS vs. File Processing System</h2>
+            <p>DBMS, traditional file system se kai maamlon me behtar hai:</p>
+            <ul>
+                <li><strong>Data Redundancy & Inconsistency:</strong> DBMS me normalization se duplicate data kam hota hai, jabki file system me data alag-alag files me copy hota hai jisse inconsistency aati hai.</li>
+                <li><strong>Data Access:</strong> DBMS me <code>SQL</code> jaisi powerful languages se data access karna aasan hai. File system me complex program likhne padte hain.</li>
+                <li><strong>Security & Integrity:</strong> DBMS me user access control aur data par rules (constraints) lagana aasan hai.</li>
+                <li><strong>Concurrency Control:</strong> DBMS multiple users ko ek saath safely kaam karne deta hai (ACID properties). File system me yeh bahut mushkil hai.</li>
+            </ul>
+
+            <h2>Types of Keys</h2>
+            <ul>
+                <li><strong>Super Key:</strong> Ek ya ek se zyada columns ka set jo ek row ko uniquely identify kare.</li>
+                <li><strong>Candidate Key:</strong> Ek <strong>minimal</strong> Super Key (jisme se koi attribute hata na sakein).</li>
+                <li><strong>Primary Key:</strong> Wo Candidate Key jisko DBA table ka main key chunta hai. Yeh <strong><code>NOT NULL</code></strong> aur <strong><code>UNIQUE</code></strong> hona chahiye.</li>
+                <li><strong>Foreign Key:</strong> Ek table ka column jo doosre table ki Primary Key ko refer karta hai, jisse do tables ke beech me link banta hai.</li>
+                <li><strong>Alternate Key:</strong> Wo Candidate Keys jo Primary Key nahi banin.</li>
+            </ul>
+        </div>
+    </main>
+    <script src="/Pages/Subjects/DBMS/dbms_script.js"></script>
+</body>
+</html>

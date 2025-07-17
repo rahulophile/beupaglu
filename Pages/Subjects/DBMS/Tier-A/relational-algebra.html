@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relational Algebra - DBMS</title>
+    <link rel="stylesheet" href="/Pages/Subjects/DBMS/dbms_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="nav-buttons">
+            <a href="/index.html" class="home-button"><i class="fas fa-home"></i> Home</a>
+            <a href="/Pages/Subjects/DBMS/dbms_home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to DBMS</a>
+        </div>
+        <h1 class="subject-title">DBMS</h1>
+        <div class="theme-switcher">
+            <i class="fas fa-sun"></i><label class="switch"><input type="checkbox" id="theme-toggle-checkbox"><span class="slider round"></span></label><i class="fas fa-moon"></i>
+        </div>
+    </header>
+
+    <main class="content-container topic-page">
+        <div class="full-topic">
+            <h1>Relational Algebra</h1>
+            <p>Relational Algebra ek <strong>procedural</strong> query language hai. Iska matlab hai ki isme hum database ko batate hain ki "kya" data chahiye aur "kaise" nikalna hai. Yeh <strong>set theory</strong> ke operations par based hai aur SQL ka theoretical foundation maana jaata hai.</p>
+            
+            <h2>Core Operations</h2>
+            <ul>
+                <li><strong>Selection (σ):</strong> Rows ko filter karta hai, bilkul SQL ke <code>WHERE</code> clause ki tarah. Example: <code>σ (marks > 80) (Student)</code></li>
+                <li><strong>Projection (π):</strong> Columns ko select karta hai, bilkul SQL ke <code>SELECT ColumnName</code> ki tarah. Yeh by default duplicate rows hata deta hai. Example: <code>π (Name, Age) (Student)</code></li>
+                <li><strong>Union (∪):</strong> Do tables (jo union-compatible hon) ki saari rows ko combine karta hai.</li>
+                <li><strong>Set Difference (-):</strong> Wo rows nikalta hai jo pehle table me hain par doosre me nahi.</li>
+                <li><strong>Cartesian Product (×):</strong> Do tables ke har row ko doosre table ke har row ke saath jod deta hai.</li>
+                <li><strong>Rename (ρ):</strong> Isse hum relations (tables) ya unke attributes ka naam badal sakte hain.</li>
+            </ul>
+
+            <h2>Derived Operations (Joins)</h2>
+            <p>Joins core operations se derive hote hain. Inka kaam do tables ko ek specific condition par jodna hai.</p>
+            <ul>
+                <li><strong>Natural Join (⋈):</strong> Yeh automatically dono tables ke <strong>common columns</strong> par join karta hai.</li>
+                <li><strong>Theta Join:</strong> Yeh kisi bhi condition (theta) jaise <code>(>, <, =)</code> par join karta hai.</li>
+                <li><strong>Outer Joins (Left, Right, Full):</strong> Yeh un rows ko bhi result me rakhte hain jinka match doosre table me nahi milta, aur unki jagah <code>NULL</code> daal dete hain.</li>
+            </ul>
+        </div>
+    </main>
+    <script src="/Pages/Subjects/DBMS/dbms_script.js"></script>
+</body>
+</html>

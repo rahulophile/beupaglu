@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Queries - DBMS</title>
+    <link rel="stylesheet" href="../../dbms_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="page-header">
+        <a href="../../../index.html" class="home-button"><i class="fas fa-home"></i> Home</a>
+        <a href="../dbms_home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to DBMS</a>
+        <div class="theme-switcher">
+            <i class="fas fa-sun"></i><label class="switch"><input type="checkbox" id="theme-toggle-checkbox"><span class="slider round"></span></label><i class="fas fa-moon"></i>
+        </div>
+    </header>
+
+    <main class="content-container topic-page">
+        <div class="full-topic">
+            <h1>SQL Queries (Structured Query Language)</h1>
+            <p>SQL (Structured Query Language) ek standard language hai jo relational databases se communicate karne ke liye use hoti hai. Isse hum data ko create, retrieve, update, aur delete kar sakte hain.</p>
+            
+            <h2>A. Basic Structure: <code>SELECT-FROM-WHERE</code></h2>
+            <p>Har SQL query ka dil yehi 3 keywords hain:</p>
+            <ul>
+                <li><strong><code>SELECT</code>:</strong> Tumhe kya-kya <strong>columns</strong> chahiye. <code>*</code> ka matlab saare columns.</li>
+                <li><strong><code>FROM</code>:</strong> Kis <strong>table</strong> se data chahiye.</li>
+                <li><strong><code>WHERE</code>:</strong> Data filter karne ke liye <strong>condition</strong>.</li>
+            </ul>
+            <p><code>SELECT ename FROM Works WHERE cname = 'XYZ';</code></p>
+            
+            <h2>B. Joins: The Real Power</h2>
+            <p>Asli maza tab hai jab humein data ek se zyada table se nikalna ho. JOIN do tables ko ek common column ke basis par jodta hai.</p>
+            <ul>
+                <li><strong>INNER JOIN:</strong> Sirf wahi rows dikhata hai jahan dono tables me matching value ho.</li>
+                <li><strong>LEFT/RIGHT OUTER JOIN:</strong> Ek table ki saari rows dikhata hai, bhale hi doosre me match na ho (wahan <code>NULL</code> aa jayega).</li>
+                <li><strong>FULL OUTER JOIN:</strong> Dono tables ki saari rows dikhata hai.</li>
+            </ul>
+            
+            <h2>C. Aggregate Functions with <code>GROUP BY</code> and <code>HAVING</code></h2>
+            <p>Jab humein data ko summarize karna ho (e.g., total salary, average marks), tab hum Aggregate Functions (<code>COUNT</code>, <code>SUM</code>, <code>AVG</code>, <code>MAX</code>, <code>MIN</code>) use karte hain.</p>
+            <ul>
+                <li><strong><code>GROUP BY</code>:</strong> Aggregate functions ko groups me apply karta hai. (e.g., har company ki average salary).</li>
+                <li><strong><code>HAVING</code>:</strong> <code>GROUP BY</code> se bane hue groups ko filter karta hai. (e.g., sirf unhi companies ko dikhao jinki average salary 50000 se zyada ho).</li>
+            </ul>
+
+            <h2>D. Subqueries (Nested Queries)</h2>
+            <p>Ek query ke andar doosri query. Andar waali query pehle chalti hai aur apna result bahar waali query ko deti hai. Yeh complex problems solve karne me bahut kaam aati hai.</p>
+        </div>
+    </main>
+    <script src="../../dbms_script.js"></script>
+</body>
+</html>

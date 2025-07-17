@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-R Diagram - DBMS</title>
+    <link rel="stylesheet" href="../../dbms_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="page-header">
+        <a href="../../../index.html" class="home-button"><i class="fas fa-home"></i> Home</a>
+        <a href="../dbms_home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to DBMS</a>
+        <div class="theme-switcher">
+            <i class="fas fa-sun"></i><label class="switch"><input type="checkbox" id="theme-toggle-checkbox"><span class="slider round"></span></label><i class="fas fa-moon"></i>
+        </div>
+    </header>
+
+    <main class="content-container topic-page">
+        <div class="full-topic">
+            <h1>E-R Diagram & Relational Model</h1>
+            <p><strong>E-R (Entity-Relationship) Diagram</strong> ek 'Naksha' hai. Yeh database banane se pehle ka blueprint hai, jisse hum system ke data ko design karte hain. Isse humein pata chalta hai ki system mein kaun-kaun si 'cheezein' (Entities) hain, unki kya-kya properties (Attributes) hain, aur wo aapas mein kaise judi hui hain (Relationships).</p>
+            
+            <h2>A. Core Components of an E-R Diagram</h2>
+            <ul>
+                <li><strong>Entity [Rectangle]:</strong> Koi bhi real-world object (e.g., <code>Student</code>, <code>Car</code>). <strong>Weak Entity [[Double Rectangle]]</strong> apni pehchaan ke liye doosre par depend karti hai.</li>
+                <li><strong>Attribute (Oval):</strong> Entity ki properties (e.g., <code>Name</code>, <code>Age</code>). Iske types hain: Simple, Composite, <strong>Multi-valued ((Double Oval))</strong>, <strong>Derived (Dashed Oval)</strong>, aur <strong>Key (Underlined)</strong>.</li>
+                <li><strong>Relationship <Diamond>:</strong> Entities ke beech ka connection (e.g., Student <em>enrolls in</em> Course).</li>
+            </ul>
+
+            <h2>B. Cardinality Constraints</h2>
+            <p>Yeh batata hai ki ek entity ke kitne instance dusri entity ke kitne instance se jud sakte hain. Yeh 4 tarah ke hote hain:</p>
+            <ul>
+                <li><strong>One-to-One (1:1):</strong> Ek <code>Country</code> ka ek hi <code>President</code> hota hai.</li>
+                <li><strong>One-to-Many (1:N):</strong> Ek <code>Professor</code> bahut saare <code>Courses</code> padha sakta hai.</li>
+                <li><strong>Many-to-One (N:1):</strong> Bahut saare <code>Students</code> ek <code>Course</code> me enroll hote hain.</li>
+                <li><strong>Many-to-Many (M:N):</strong> Ek <code>Student</code> bahut saare <code>Courses</code> le sakta hai, aur ek <code>Course</code> me bahut saare <code>Students</code> ho sakte hain.</li>
+            </ul>
+
+            <h2>C. Mapping to Relational Model (Tables)</h2>
+            <p>E-R diagram se actual tables banane ke rules. Sabse important rule hai ki <strong>Many-to-Many (M:N)</strong> relationship ke liye hamesha ek naya, alag table banta hai, jisme dono entities ke Primary Keys as Foreign Keys aate hain.</p>
+        </div>
+    </main>
+    <script src="../../dbms_script.js"></script>
+</body>
+</html>

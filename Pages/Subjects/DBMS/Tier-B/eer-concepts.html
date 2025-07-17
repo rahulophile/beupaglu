@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EER Concepts - DBMS</title>
+    <link rel="stylesheet" href="/Pages/Subjects/DBMS/dbms_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="nav-buttons">
+            <a href="/index.html" class="home-button"><i class="fas fa-home"></i> Home</a>
+            <a href="/Pages/Subjects/DBMS/dbms_home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to DBMS</a>
+        </div>
+        <h1 class="subject-title">DBMS</h1>
+        <div class="theme-switcher">
+            <i class="fas fa-sun"></i><label class="switch"><input type="checkbox" id="theme-toggle-checkbox"><span class="slider round"></span></label><i class="fas fa-moon"></i>
+        </div>
+    </header>
+
+    <main class="content-container topic-page">
+        <div class="full-topic">
+            <h1>EER Concepts (Generalization, Specialization, Aggregation)</h1>
+            <p>Yeh <strong>Enhanced E-R (EER)</strong> model ke advanced concepts hain jo real-world relationships ko aur aache se model karne me help karte hain.</p>
+            
+            <h2>Specialization (Top-Down Approach)</h2>
+            <p>Yeh ek high-level entity ko uske special features ke basis par subgroups (subclasses) me todne ka process hai. Yeh <strong>"is-a"</strong> relationship model karta hai.</p>
+            <p><strong>Example:</strong> Ek <code>PERSON</code> entity ko <code>STUDENT</code> aur <code>PROFESSOR</code> me specialize karna. Har student ek person hai, aur har professor bhi ek person hai, par unke apne-apne alag attributes hote hain (jaise student ka <code>roll_no</code> aur professor ki <code>salary</code>).</p>
+            
+            <h2>Generalization (Bottom-Up Approach)</h2>
+            <p>Yeh Specialization ka ulta hai. Jab hum kuch low-level entities me common properties dekhte hain aur unhe combine karke ek high-level (general) entity bana dete hain.</p>
+            <p><strong>Example:</strong> <code>CAR</code> aur <code>TRUCK</code> do entities se unke common attributes (<code>vehicle_id</code>, <code>price</code>) nikal kar ek general entity <code>VEHICLE</code> banana.</p>
+            
+            <h2>Aggregation</h2>
+            <p>Aggregation tab use hota hai jab humein ek <strong>"relationship"</strong> ka kisi aur entity ke saath <strong>"relationship"</strong> dikhana ho. Isme hum ek poore relationship set ko ek single abstract entity ki tarah treat karte hain.</p>
+            <p><strong>Example:</strong> Ek <code>Doctor</code> ek <code>Patient</code> ka <code>treatment</code> karta hai. Yeh poora scenario (Doctor-treats-Patient) ek unit hai. Ab, ek <code>Hospital</code> is poore 'treatment' process ko <strong>manages</strong> karta hai. Yahan, Hospital ka relationship `Doctor` ya `Patient` se nahi, balki unke `treatment` waale relationship se hai.</p>
+        </div>
+    </main>
+    <script src="/Pages/Subjects/DBMS/dbms_script.js"></script>
+</body>
+</html>

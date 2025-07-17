@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normalization & FDs - DBMS</title>
+    <link rel="stylesheet" href="/Pages/Subjects/DBMS/dbms_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="nav-buttons">
+            <a href="/index.html" class="home-button"><i class="fas fa-home"></i> Home</a>
+            <a href="/Pages/Subjects/DBMS/dbms_home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to DBMS</a>
+        </div>
+        <h1 class="subject-title">DBMS</h1>
+        <div class="theme-switcher">
+            <i class="fas fa-sun"></i><label class="switch"><input type="checkbox" id="theme-toggle-checkbox"><span class="slider round"></span></label><i class="fas fa-moon"></i>
+        </div>
+    </header>
+
+    <main class="content-container topic-page">
+        <div class="full-topic">
+            <h1>Normalization & Functional Dependencies (FDs)</h1>
+            <p><strong>Problem Scenario:</strong> Socho tum ek hi register me saara hisaab rakhte ho. Usme customer ki details, uske order ki details, sab mix hai. Isse 3 tarah ki "sar-dardi" <strong>(Anomalies)</strong> hoti hain: <code>Insertion</code>, <code>Deletion</code>, aur <code>Updation</code> Anomaly. Inhi problems ko solve karne ka process <strong>Normalization</strong> hai.</p>
+            
+            <h2>A. Functional Dependency (FD)</h2>
+            <p>FD ka simple matlab hai dependency. Agar attribute 'A' se hum attribute 'B' ko uniquely pehchaan sakte hain, to hum kehte hain B, A par functionally dependent hai. Ise likhte hain: <strong>A → B</strong> (Read as: A determines B). Example: <code>Aadhaar_Number → Name</code>.</p>
+
+            <h2>B. Normal Forms (1NF, 2NF, 3NF, BCNF)</h2>
+            <ul>
+                <li><strong>1NF (First Normal Form):</strong> Har cell me sirf ek <strong>(atomic)</strong> value honi chahiye. No multiple values.</li>
+                <li><strong>2NF (Second Normal Form):</strong> Koi bhi non-key attribute, primary key ke <strong>adhure hisse</strong> par depend na kare. Ise <strong>Partial Dependency</strong> kehte hain.</li>
+                <li><strong>3NF (Third Normal Form):</strong> Koi bhi non-key attribute, kisi <strong>dusre non-key attribute</strong> par depend na kare. Ise <strong>Transitive Dependency</strong> kehte hain.</li>
+                <li><strong>BCNF (Boyce-Codd Normal Form):</strong> Yeh 3NF ka stricter version hai. Iske rule ke anusaar, har non-trivial FD <code>X → Y</code> me, <strong><code>X</code></strong> hamesha ek <strong>Super Key</strong> hona chahiye.</li>
+            </ul>
+
+            <h2>C. How to Find Candidate Keys</h2>
+            <p><strong>Attribute Closure (X+):</strong> Ek attribute set 'X' ki "power" nikalna. Yani, 'X' se FDs ka use karke aap aur kaun-kaun se attributes nikal sakte ho.</p>
+            <p><strong>The Golden Trick:</strong> FDs ke Right Hand Side (RHS) me dekho. Jo attribute <strong>kabhi nahi aaya</strong>, wo 100% har Candidate Key ka hissa hoga. Uss "essential attribute" set ka closure nikalo. Agar closure me saare attributes aa gaye, to wahi tumhara Candidate Key hai!</p>
+        </div>
+    </main>
+    <script src="/Pages/Subjects/DBMS/dbms_script.js"></script>
+</body>
+</html>
