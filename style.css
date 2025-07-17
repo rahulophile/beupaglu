@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;500&display=swap');
 
 :root {
     --primary-font: 'Montserrat', sans-serif;
@@ -22,6 +22,27 @@ body {
     line-height: 1.6;
 }
 
+/* ===== TOP HEADER STYLING ===== */
+.top-header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: fixed; /* Makes it sticky */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+}
+
+.header-content {
+    font-family: var(--primary-font);
+    font-weight: 900; /* Extra bold */
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
 .page {
     min-height: 100vh;
     display: flex;
@@ -29,18 +50,24 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    padding-top: 80px; /* Added padding to prevent content from hiding behind the header */
+    position: relative;
 }
 
 .landing-content {
     max-width: 1200px;
     width: 100%;
     text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .landing-title {
     font-family: var(--primary-font);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
-    color: var(--primary-color);
+    color: var(--secondary-color); /* Changed color slightly */
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
@@ -110,16 +137,37 @@ body {
     color: #7f8c8d;
 }
 
-footer {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    font-size: 0.9rem;
+/* ===== DEVELOPER CREDIT STYLING ===== */
+.developer-credit {
+    padding-top: 3rem; /* Add space between content and credit */
 }
 
-footer a {
-    color: var(--primary-color);
+.developer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-decoration: none;
+    color: var(--secondary-color);
     font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.developer-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    color: var(--primary-color);
+}
+
+.developer-link i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.developer-link strong {
+    font-family: var(--primary-font);
+    font-weight: 700;
 }

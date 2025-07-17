@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEU Exam Fodu</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- ===== TOP HEADER ===== -->
+    <header class="top-header">
+        <div class="header-content">
+            BEU Exam Fodu
+        </div>
+    </header>
+
     <div id="landing-page" class="page">
         <div class="landing-content">
             <header>
-                <h1 class="landing-title">BEU Exam Fodu</h1>
+                <!-- This title is now part of the main content, not the top bar -->
+                <h1 class="landing-title">Welcome!</h1> 
                 <p class="landing-subtitle">Pure Bihar ka ek matra website, jahan se padh kar tu BEU exam me fod sakta hai!</p>
             </header>
             <main class="subjects-grid">
@@ -29,9 +37,14 @@
                 </a>
             </main>
         </div>
-        <footer>
-            <p>Made with ❤️ by <a href="https://www.linkedin.com/in/rahulophile/" target="_blank">CodeByRahulophile</a></p>
-        </footer>
+
+        <!-- ===== DEVELOPER CREDIT SECTION ===== -->
+        <div class="developer-credit">
+            <a href="https://www.linkedin.com/in/rahulophile/" target="_blank" class="developer-link">
+                <i class="fas fa-code"></i>
+                <span>Developed by <strong>CodeByRahulophile</strong></span>
+            </a>
+        </div>
     </div>
 </body>
 </html>
